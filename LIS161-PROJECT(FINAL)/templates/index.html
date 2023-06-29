@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- #<link rel="stylesheet" href="style.css"> -->
+    <style>
+        body {
+            background-color: #fff3fb;
+        }
+        
+            
+        .bts-heading {
+            color: #645CBB;
+            font-family: 'Franklin Gothic Medium';
+            font-size: 50px;
+            margin-left: 10px;
+            margin-top: 40px;
+        }
+        
+        
+        .hm-bttn {
+            background-color: #645CBB;
+            color: #FDE2F3;
+            text-decoration: none;
+            text-align: center;
+            border: none;
+            height: 45px;
+            width: 150px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Franklin Gothic Medium';
+            font-size: 15px;
+            transition-duration: 0.4s;
+            float: inline;
+            margin-top: 8px;
+            margin-bottom: 8px;
+            margin-left: 10px;
+            
+        }
+        .hm-bttn:hover {
+                background-color: #A084DC;
+        }   
+    </style>
+<title>Bangtan!</title>
+</head>
+
+<body>
+    <!-- <h1 class="bts-heading">BANGTAN SONYEONDAN MEMBERS</h1> -->
+    <!-- <ul> -->
+    <!-- <button class="hm-bttn"> -->
+        <!-- <li><a href ="/members/hyung{{ bangmem_id }}">HYUNG (형)</a></li> -->
+    <!-- </button> -->
+    <!-- <button class="hm-bttn"> -->
+        <!-- <li><a href ="/members/maknae{{ bangmem_id }}">MAKNAE (막내)</a></li> -->
+    <!-- </button>    -->
+    <!-- </ul> -->
+    <h1 class="bts-heading">BANGTAN SONYEONDAN MEMBERS</h1>
+    <button class="hm-bttn" ><a href ="/members/hyung{{ bangmem_id }}">HYUNG (형)</a>
+       
+    </button>
+    <button class="hm-bttn"><a href ="/members/maknae{{ bangmem_id }}">MAKNAE (막내)</a>
+       
+    </button>
+</body>
+</html>
+{% endblock %}

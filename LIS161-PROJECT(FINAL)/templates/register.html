@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Wanna join BTS?</h1>
+<p>Enter your details down</p>
+<form action="{{ url_for('processing') }}" method="POST">
+    <label for="bang_mem">Are you a Maknae or Hyung?</label>
+    <select name="bang_mem" id="bts_type" required>
+        <option disabled selected value>...</option>
+        <option value="maknae">Maknae</option>
+        <option value="hyung">Hyung</option>
+    </select><br><br>
+    <label for="bang_fname">Your name:</label>
+    <input type="text" name="bang_fname" id="bang_fname" required><br><br>
+    <label for="bang_sname">Stage name:</label>
+    <input type="text" name="bang_sname" id="bang_sname"><br><br>
+    <label for="bang_bdate">Birthday:</label>
+    <input type="text" name="bang_bdate" id="bang_bdate"><br><br>
+    <label for="bang_pbirth">Place of Birth:</label>
+    <input type="text" name="bang_pbirth" id="bang_pbirth"><br><br>
+    <label for="bang_position">Position:</label>
+    <input type="text" name="bang_position" id="bang_position"><br><br>
+    <label for="bang_picurl">Image URL:</label>
+    <input type="url" name="bang_picurl" id="bang_picurl"><br><br>
+    <label for="bang_line">Confirm Maknae or Hyung:</label>
+    <input type="text" name="bang_line" id="bang_line"><br><br>
+    <label for="bang_line">Maknae or Hyung?:</label>
+    <input type="text" name="bang_line" id="bang_line"><br><br>
+    <label for="bang_line_type">Last one, Hyung or Maknae?:</label>
+    <input type="text" name="bang_line_type" id="bang_line_type"><br><br>
+    <p>Make sure everything is just the same, just for fun!!!</p>
+    <textarea name="bio_desc" placeholder="Tell us about yourself :)" cols="30" rows="10"></textarea><br>
+    <input type="submit" value="Let's go!">
+</form>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Wanna change something?</h1>
+    <form action="{{ url_for('update') }}" method="post">
+        <label for="bang_mem">Type of Member, Hyung or Maknae?:</label>
+        <input type="text" name="bang_mem" value="{{ bio.bang_mem }}" required><br><br>
+        <input type="hidden" name="bangmem_id" value="{{ bio.id }}"><br><br>
+        <label for="bang_line_type">Line Type:</label>
+        <input type="text" name="bang_line_type" value="{{ bio.line_type }}"><br><br>
+        <label for="bang_fname">Name of Member:</label>
+        <input type="text" name="bang_fname" id="bang_fname" value="{{ bio.fname }}" required><br><br>
+        <label for="bang_sname">Stage Name:</label>
+        <input type="text" name="bang_sname" id="bang_sname" value="{{ bio.sname }}"><br><br>
+        <label for="bang_bdate">Birthday:</label>
+        <input type="text" name="bang_bdate" id="bang_bdate" value="{{ bio.bdate }}"><br><br>
+        <label for="bang_pbirth">Place of Birth:</label>
+        <input type="text" name="bang_pbirth" id="bang_pbirth" value="{{ bio.pbirth }}"><br><br>
+        <label for="bang_position">Position:</label>
+        <input type="text" name="bang_position" id="bang_position" value="{{ bio.position }}"><br><br>
+        <label for="bang_picurl">Image URL:</label>
+        <input type="url" name="bang_picurl" id="bang_picurl" value="{{ bio.picurl }}"><br>
+        <label for="bang_line">Line:</label>
+        <textarea name="bang_line" cols="30" rows="10">{{ bio.line }}</textarea><br>
+        <input type="submit" value="Update!">
+    </form>
+{% endblock %}

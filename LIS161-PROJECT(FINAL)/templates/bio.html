@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ bio.fname }}</h1>
+    <p>Stage Name: {{ bio.sname }}</p>
+    <p>Birthday: {{ bio.bdate }}</p>
+    <p>Position: {{ bio.position }}</p>
+    <img src="{{ bio.picurl }}" alt="Member Image">
+    <form action="{{ url_for('modify') }}" method="post">
+        <input type="hidden" name="bangmem_id" value="{{ bio.id }}">
+        <input class="btn btn-secondary" type="submit" name="modify" value="edit"></input>
+        <input class="btn btn-danger" type="submit" name="modify" value="delete"></input>
+    </form>
+{% endblock %}
