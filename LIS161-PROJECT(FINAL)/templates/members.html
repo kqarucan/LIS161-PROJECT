@@ -1,9 +1,52 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>List of {{ bang_mem }}</h1>
-<ul>
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+        background-color: #fff3fb;
+    }
+  
+      
+  .bts-heading2 {
+      color: #645CBB;
+      font-family: 'Franklin Gothic Medium';
+      font-size: 50px;
+      margin-left: 10px;
+      margin-top: 40px;
+  }
+  
+  
+  .mm-bttn {
+      background-color: #EBC7E6;
+      text-align: center;
+      border: none;
+      height: 45px;
+      width: 180px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: 'Franklin Gothic Medium';
+      font-size: 15px;
+      transition-duration: 0.4s;
+      float: inline;
+      margin-top: 8px;
+      margin-bottom: 8px;
+      margin-left: 10px;
+      
+  }
+  .mm-bttn:hover {
+          background-color: #BFACE2;
+  }   
+  </style>
+</head>
+<body>
+  <h1 class="bts-heading2">List of {{ bang_mem }}</h1>
     {% for member in members %}
-    <li><a href="/members/{{ member.id }}">{{ member.fname }}</a></li>
+    <button class="mm-bttn"><a href="/members/{{ member.id }}">{{ member.fname }}</a>
+    </button>
     {% endfor %}
-  </ul>
+</body>
+</html>
+
 {% endblock %}

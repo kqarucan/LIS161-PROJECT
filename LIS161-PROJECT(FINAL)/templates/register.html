@@ -1,35 +1,173 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Wanna join BTS?</h1>
-<p>Enter your details down</p>
-<form action="{{ url_for('processing') }}" method="POST">
-    <label for="bang_mem">Are you a Maknae or Hyung?</label>
-    <select name="bang_mem" id="bts_type" required>
-        <option disabled selected value>...</option>
-        <option value="maknae">Maknae</option>
-        <option value="hyung">Hyung</option>
-    </select><br><br>
-    <label for="bang_fname">Your name:</label>
-    <input type="text" name="bang_fname" id="bang_fname" required><br><br>
-    <label for="bang_sname">Stage name:</label>
-    <input type="text" name="bang_sname" id="bang_sname"><br><br>
-    <label for="bang_bdate">Birthday:</label>
-    <input type="text" name="bang_bdate" id="bang_bdate"><br><br>
-    <label for="bang_pbirth">Place of Birth:</label>
-    <input type="text" name="bang_pbirth" id="bang_pbirth"><br><br>
-    <label for="bang_position">Position:</label>
-    <input type="text" name="bang_position" id="bang_position"><br><br>
-    <label for="bang_picurl">Image URL:</label>
-    <input type="url" name="bang_picurl" id="bang_picurl"><br><br>
-    <label for="bang_line">Confirm Maknae or Hyung:</label>
-    <input type="text" name="bang_line" id="bang_line"><br><br>
-    <label for="bang_line">Maknae or Hyung?:</label>
-    <input type="text" name="bang_line" id="bang_line"><br><br>
-    <label for="bang_line_type">Last one, Hyung or Maknae?:</label>
-    <input type="text" name="bang_line_type" id="bang_line_type"><br><br>
-    <p>Make sure everything is just the same, just for fun!!!</p>
-    <textarea name="bio_desc" placeholder="Tell us about yourself :)" cols="30" rows="10"></textarea><br>
-    <input type="submit" value="Let's go!">
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* page background */
+        body {
+            background-color: #fff3fb;
+        }
+        
+        /* wanna join? css */
+        .reg-head {
+            color: #645CBB;
+            font-family: 'Franklin Gothic Medium';
+            font-size: 50px;
+            margin-left: 10px;
+            margin-top: 40px;
+        }
+
+        p.enter {
+            color: #A084DC;
+            font-family: 'Franklin Gothic Medium';
+            font-size: 27px;
+            margin-left: 8px;
+        }
+
+        .hm-type {
+            color: #A084DC;
+            font-family: 'Franklin Gothic Medium';
+        }
+
+        .choice {
+            color: #A084DC;
+            font-family: 'Franklin Gothic Medium';
+        }
+
+        .choice:hover {
+            background-color: #BFACE2;
+        }
+        
+        /* details */
+        .details {
+            color: #A084DC;
+            font-family: 'Franklin Gothic Medium';
+            margin-left: 8px;
+        }
+
+        /* details textbox */
+        input[type=text], select {
+            background-color: #ffdaf2;
+            border-color: #A084DC;
+            border-style: solid;
+            border-width: 2px;
+            border-radius: 5px;
+        }
+
+        /* birthday details */
+        input[type=number] {
+            background-color: #ffdaf2;
+            border-color: #A084DC;
+            border-style: solid;
+            border-width: 2px;
+            border-radius: 5px;
+        }
+
+        /* Image URL details */
+        input[type=url] {
+            background-color: #ffdaf2;
+            border-color: #A084DC;
+            border-style: solid;
+            border-width: 2px;
+            border-radius: 5px;
+        }
+
+        .bio {
+            color: #A084DC;
+            font-family: 'Franklin Gothic Medium';
+            margin-left: 8px;
+        }
+
+        textarea {
+            background-color: #ffdaf2;
+            border-color: #A084DC;
+            color: #A084DC;
+            border-style: solid;
+            border-width: 2px;
+            border-radius: 5px;
+        }
+
+        ::placeholder {
+            color:#A084DC;
+        }
+
+        p.fun {
+            color: #A084DC;
+            font-family: 'Lucida Sans';
+            font-size: 11;
+            margin-left: 8px;
+            margin-top: 5px;
+        }
+
+        input[type=submit] {
+            display: inline-block;
+            background-color: #645CBB;
+            color: #FDE2F3;
+            border: none;
+            height: 45px; width: 150px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Franklin Gothic Medium';
+            font-size: 15px;
+            transition-duration: 0.4s;
+            margin: 8px 0;
+            padding: 14px 20px;
+        }
+
+        .g-bttn:hover {
+            background-color: #A084DC;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="reg-head">Wanna join BTS?</h1>
+    
+    <p class="enter">Enter your details below!</p>
+    
+    <form action="{{ url_for('processing') }}" method="POST">
+        <label class="details" for="bang_mem">Are you a Maknae or Hyung?</label>
+        <select class="hm-type" name="bang_mem" id="bts_type" required>
+            <option disabled selected value>...</option>
+            <option value="maknae">Maknae</option>
+            <option value="hyung">Hyung</option>
+        </select><br><br>
+        
+        <label class="details" for="bang_fname">Your name:</label>
+        <input type="text" name="bang_fname" id="bang_fname" required><br><br>
+        
+        <label class="details" for="bang_sname">Stage name:</label>
+        <input type="text" name="bang_sname" id="bang_sname"><br><br>
+        
+        <label class="details" for="bang_bdate">Birthday:</label>
+        <input type="text" name="bang_bdate" id="bang_bdate"><br><br>
+        
+        <label class="details" for="bang_pbirth">Place of Birth:</label>
+        <input type="text" name="bang_pbirth" id="bang_pbirth"><br><br>
+        
+        <label class="details" for="bang_position">Position:</label>
+        <input type="text" name="bang_position" id="bang_position"><br><br>
+        
+        <label class="details" for="bang_picurl">Image URL:</label>
+        <input type="url" name="bang_picurl" id="bang_picurl"><br><br>
+        
+        <label class="details" for="bang_line">Confirm Maknae or Hyung:</label>
+        <input type="text" name="bang_line" id="bang_line"><br><br>
+        
+        <label class="details" for="bang_line">Maknae or Hyung?:</label>
+        <input type="text" name="bang_line" id="bang_line"><br><br>
+        
+        <label class="details" for="bang_line_type">Last one, Hyung or Maknae?:</label>
+        <input type="text" name="bang_line_type" id="bang_line_type"><br>
+        
+        <p class="fun">Make sure everything is just the same, just for fun!!!</p>
+
+        <label class="bio" for="bio">Bio</label><br><br>
+        <textarea input type="text" class="details" name="bio_desc" placeholder="Tell us about yourself :)" cols="30" rows="10"></textarea><br>
+        
+        <br><input type="submit" value="Let's go!">
+    </form>
+</body>
+</html>
 {% endblock %}

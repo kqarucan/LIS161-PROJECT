@@ -18,12 +18,14 @@
             margin-left: 10px;
             margin-top: 40px;
         }
-        
+         p {
+            color: #A084DC;
+            font-family: 'Franklin Gothic Medium';
+            font-size: 20px;
+         }
         
         .hm-bttn {
-            background-color: #645CBB;
-            color: #FDE2F3;
-            text-decoration: none;
+            background-color: #EBC7E6;
             text-align: center;
             border: none;
             height: 45px;
@@ -40,24 +42,17 @@
             
         }
         .hm-bttn:hover {
-                background-color: #A084DC;
+                background-color: #BFACE2;
         }   
     </style>
 <title>Bangtan!</title>
 </head>
 
 <body>
-    <!-- <h1 class="bts-heading">BANGTAN SONYEONDAN MEMBERS</h1> -->
-    <!-- <ul> -->
-    <!-- <button class="hm-bttn"> -->
-        <!-- <li><a href ="/members/hyung{{ bangmem_id }}">HYUNG (형)</a></li> -->
-    <!-- </button> -->
-    <!-- <button class="hm-bttn"> -->
-        <!-- <li><a href ="/members/maknae{{ bangmem_id }}">MAKNAE (막내)</a></li> -->
-    <!-- </button>    -->
-    <!-- </ul> -->
+   
     <h1 class="bts-heading">BANGTAN SONYEONDAN MEMBERS</h1>
-    <button class="hm-bttn" ><a href ="/members/hyung{{ bangmem_id }}">HYUNG (형)</a>
+    <p>Is your BIAS from the Hyung line or the Maknae line? :)</p>
+    <button class="hm-bttn"><a href ="/members/hyung{{ bangmem_id }}">HYUNG (형)</a>
        
     </button>
     <button class="hm-bttn"><a href ="/members/maknae{{ bangmem_id }}">MAKNAE (막내)</a>

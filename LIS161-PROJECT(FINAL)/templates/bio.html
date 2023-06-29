@@ -1,14 +1,47 @@
 {% extends 'base.html' %}
-
 {% block content %}
-    <h1>{{ bio.fname }}</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .bts-heading3 {
+            color: #645CBB;
+            font-family: 'Franklin Gothic Medium';
+            font-size: 35px;
+            margin-left: 10px;
+            margin-top: 40px;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            border-radius: 30px;
+          }
+
+        p {
+            color: #A084DC;
+            font-family: 'Franklin Gothic Medium';
+            font-size: 20px;
+            margin-left: 10px;
+            margin-top: 40px;
+        
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+    <h1 class="bts-heading3">{{ bio.fname }}</h1>
+    <img src="{{ bio.picurl }}" alt="Member Image">
     <p>Stage Name: {{ bio.sname }}</p>
     <p>Birthday: {{ bio.bdate }}</p>
     <p>Position: {{ bio.position }}</p>
-    <img src="{{ bio.picurl }}" alt="Member Image">
     <form action="{{ url_for('modify') }}" method="post">
         <input type="hidden" name="bangmem_id" value="{{ bio.id }}">
-        <input class="btn btn-secondary" type="submit" name="modify" value="edit"></input>
-        <input class="btn btn-danger" type="submit" name="modify" value="delete"></input>
+        <input class="btn btn-secondary" type="submit" name="modify" value="edit" style="background-color: #FF78C4;">
+        <input class="btn btn-danger" type="submit" name="modify" value="delete" style="background-color: #8B1874;">
     </form>
 {% endblock %}

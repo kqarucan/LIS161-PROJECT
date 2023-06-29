@@ -1,27 +1,159 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Wanna change something?</h1>
+<!DOCTYPE html>
+<html>
+<head>
+   <style>
+     /* page background */
+     body {
+        background-color: #fff3fb;
+    }
+    
+    /* wanna join? css */
+    .reg-head {
+        color: #645CBB;
+        font-family: 'Franklin Gothic Medium';
+        font-size: 50px;
+        margin-left: 10px;
+        margin-top: 40px;
+    }
+
+    p.enter {
+        color: #A084DC;
+        font-family: 'Franklin Gothic Medium';
+        font-size: 27;
+        margin-left: 8px;
+    }
+
+    .hm-type {
+        color: #A084DC;
+        font-family: 'Franklin Gothic Medium';
+    }
+
+    .choice {
+        color: #A084DC;
+        font-family: 'Franklin Gothic Medium';
+    }
+
+    .choice:hover {
+        background-color: #BFACE2;
+    }
+    
+    /* details */
+    .details {
+        color: #A084DC;
+        font-family: 'Franklin Gothic Medium';
+        margin-left: 8px;
+    }
+
+    /* details textbox */
+    input[type=text], select {
+        background-color: #ffdaf2;
+        border-color: #A084DC;
+        border-style: solid;
+        border-width: 2px;
+        border-radius: 5px;
+    }
+
+    /* birthday details */
+    input[type=number] {
+        background-color: #ffdaf2;
+        border-color: #A084DC;
+        border-style: solid;
+        border-width: 2px;
+        border-radius: 5px;
+    }
+
+    /* Image URL details */
+    input[type=url] {
+        background-color: #ffdaf2;
+        border-color: #A084DC;
+        border-style: solid;
+        border-width: 2px;
+        border-radius: 5px;
+    }
+
+    .bio {
+        color: #A084DC;
+        font-family: 'Franklin Gothic Medium';
+        margin-left: 8px;
+    }
+
+    textarea {
+        background-color: #ffdaf2;
+        border-color: #A084DC;
+        color: #A084DC;
+        border-style: solid;
+        border-width: 2px;
+        border-radius: 5px;
+    }
+
+    ::placeholder {
+        color:#A084DC;
+    }
+
+    p.fun {
+        color: #A084DC;
+        font-family: 'Lucida Sans';
+        font-size: 11;
+        margin-left: 8px;
+        margin-top: 5px;
+    }
+
+    input[type=submit] {
+        display: inline-block;
+        background-color: #645CBB;
+        color: #FDE2F3;
+        border: none;
+        height: 45px; width: 150px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-family: 'Franklin Gothic Medium';
+        font-size: 15px;
+        transition-duration: 0.4s;
+        margin: 8px 0;
+        padding: 14px 20px;
+    }
+
+    .g-bttn:hover {
+        background-color: #A084DC;
+    }
+   </style>
+</head>
+<body>
+    
+</body>
+</html>
+    <h1 class="reg-head">Wanna change something?</h1>
     <form action="{{ url_for('update') }}" method="post">
-        <label for="bang_mem">Type of Member, Hyung or Maknae?:</label>
+        <label class="details" for="bang_mem">Type of Member, Hyung or Maknae?:</label>
         <input type="text" name="bang_mem" value="{{ bio.bang_mem }}" required><br><br>
-        <input type="hidden" name="bangmem_id" value="{{ bio.id }}"><br><br>
-        <label for="bang_line_type">Line Type:</label>
+        <input type="hidden" name="bangmem_id" value="{{ bio.id }}">
+        
+        <label class="details" for="bang_line_type">Line Type:</label>
         <input type="text" name="bang_line_type" value="{{ bio.line_type }}"><br><br>
-        <label for="bang_fname">Name of Member:</label>
+        
+        <label class="details" for="bang_fname">Name of Member:</label>
         <input type="text" name="bang_fname" id="bang_fname" value="{{ bio.fname }}" required><br><br>
-        <label for="bang_sname">Stage Name:</label>
+        
+        <label class="details" for="bang_sname">Stage Name:</label>
         <input type="text" name="bang_sname" id="bang_sname" value="{{ bio.sname }}"><br><br>
-        <label for="bang_bdate">Birthday:</label>
+        
+        <label class="details" for="bang_bdate">Birthday:</label>
         <input type="text" name="bang_bdate" id="bang_bdate" value="{{ bio.bdate }}"><br><br>
-        <label for="bang_pbirth">Place of Birth:</label>
+        
+        <label class="details" for="bang_pbirth">Place of Birth:</label>
         <input type="text" name="bang_pbirth" id="bang_pbirth" value="{{ bio.pbirth }}"><br><br>
-        <label for="bang_position">Position:</label>
+        
+        <label class="details" for="bang_position">Position:</label>
         <input type="text" name="bang_position" id="bang_position" value="{{ bio.position }}"><br><br>
-        <label for="bang_picurl">Image URL:</label>
+        
+        <label class="details" for="bang_picurl">Image URL:</label>
         <input type="url" name="bang_picurl" id="bang_picurl" value="{{ bio.picurl }}"><br>
-        <label for="bang_line">Line:</label>
-        <textarea name="bang_line" cols="30" rows="10">{{ bio.line }}</textarea><br>
+        
+        <label class="details" for="bang_line">Fun fact about them that you know!</label><br>
+        <textarea input type="text" class="details" placeholder="Type some here :)" name="bang_line" cols="30" rows="10">{{ bio.line }}</textarea><br>
         <input type="submit" value="Update!">
     </form>
 {% endblock %}
